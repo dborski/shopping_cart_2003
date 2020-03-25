@@ -34,9 +34,7 @@ class ShoppingCart
   end
 
   def details
-    details = {}
-    details[:name] = name
-    details[:capacity] = capacity
+    details = Hash[:name, name, :capacity, capacity]
     details
   end
 end
