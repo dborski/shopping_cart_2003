@@ -35,5 +35,6 @@ class ShoppingCart
 
   def details
     cart_details = Hash[:name, name, :capacity, capacity]
+    cart_details
   end
 end
