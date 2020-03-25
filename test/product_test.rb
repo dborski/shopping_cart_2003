@@ -31,7 +31,6 @@ class ProductTest < Minitest::Test
   def test_it_can_get_total_price
     product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
     product2 = Product.new(:meat, 'chicken', 4.50, '2')
-
     assert_equal 37.0, product1.total_price
     assert_equal 9.0, product2.total_price
   end
@@ -40,5 +39,13 @@ class ProductTest < Minitest::Test
     product = Product.new(:paper, 'toilet paper', 3.70, '10')
     assert_equal false, product.is_hoarded?
   end
+
+  def test_hoard_product_changes_is_hoarded_to_true
+    product = Product.new(:paper, 'toilet paper', 3.70, '10')
+    assert_equal false, product.is_hoarded?
+    product.hoard
+    assert_equal true, product.is_hoarded?
+  end
+
 
 end
