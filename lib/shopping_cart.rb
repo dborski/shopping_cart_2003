@@ -21,5 +21,9 @@ class ShoppingCart
     sum_of_products
   end
 
+  def is_full?
+    total_number_of_products > 30
+  end
+
 
 end
