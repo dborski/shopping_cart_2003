@@ -37,8 +37,6 @@ class ShoppingCart
     details = {}
     details[:name] = name
     details[:capacity] = capacity
-    details 
+    details
   end
-
-
 end
