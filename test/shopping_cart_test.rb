@@ -83,5 +83,8 @@ class ShoppingCartTest < Minitest::Test
     assert_equal [product4], cart.products_by_category(:produce)
   end
 
-
+  def test_details_of_cart_in_hash
+    cart = ShoppingCart.new("King Soopers", "30items")
+    assert_equal details = {:name=> "King Soopers", :capacity=> 30}, cart.details
+  end
 end

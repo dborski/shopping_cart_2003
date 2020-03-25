@@ -33,5 +33,12 @@ class ShoppingCart
     sorted_categories
   end
 
+  def details
+    details = {}
+    details[:name] = name
+    details[:capacity] = capacity
+    details 
+  end
+
 
 end
