@@ -12,10 +12,6 @@ class ShoppingCartTest < Minitest::Test
   def test_it_has_a_name
     cart = ShoppingCart.new("King Soopers", "30items")
     assert_equal "King Soopers", cart.name
-  end
-
-  def test_it_has_a_capacity
-    cart = ShoppingCart.new("King Soopers", "30items")
     assert_equal 30, cart.capacity
   end
 
@@ -42,17 +38,6 @@ class ShoppingCartTest < Minitest::Test
     cart.add_product(product2)
     cart.add_product(product3)
     assert_equal 13, cart.total_number_of_products
-  end
-
-  def test_cart_is_not_full_by_default
-    cart = ShoppingCart.new("King Soopers", "30items")
-    product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
-    product2 = Product.new(:meat, 'chicken', 4.50, '2')
-    product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
-    cart.add_product(product1)
-    cart.add_product(product2)
-    cart.add_product(product3)
-    assert_equal false, cart.is_full?
   end
 
   def test_cart_can_be_full_at_capacity
@@ -85,7 +70,8 @@ class ShoppingCartTest < Minitest::Test
 
   def test_details_of_cart_in_hash
     cart = ShoppingCart.new("King Soopers", "30items")
-    assert_equal cart_details = {:name=> "King Soopers", :capacity=> 30}, cart.details
+    cart_details = {:name=> "King Soopers", :capacity=> 30}
+    assert_equal cart_details, cart.details
   end
 
   def test_calculates_percentage_occupied

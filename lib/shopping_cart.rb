@@ -15,11 +15,9 @@ class ShoppingCart
   end
 
   def total_number_of_products
-    sum_of_products = 0
-    products.each do |product|
-      sum_of_products += product.quantity
+    products.sum do |product|
+      product.quantity
     end
-    sum_of_products
   end
 
   def is_full?
@@ -34,9 +32,8 @@ class ShoppingCart
   end
 
   def details
-    cart_details = Hash[:name, name, :capacity, capacity]
-    cart_details
-  end
+    {name: name, capacity: capacity}
+  end 
 
   def percentage_occupied
     percentage_occupied = (total_number_of_products.to_f / capacity.to_f) * 100
